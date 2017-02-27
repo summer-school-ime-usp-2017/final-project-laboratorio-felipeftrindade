@@ -14,4 +14,12 @@ class Pedido extends Model
     public function exames() {
       return $this->belongsToMany(Exame::class);
     }
+
+    public function medico(){
+        return $this->belongsTo(Medico::class);
+    }
+
+    public function paciente(){
+        return $this->belongsTo(Paciente::class);
+    }
 }
