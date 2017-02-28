@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Atualização do exame')
+@section('title', 'Editar Exame')
 
-@section('page-header-content', 'Atualização do exame')
+@section('page-header-content', 'Editar Exame')
 
 @section('content')
 
@@ -14,7 +14,7 @@
         </div>
         <div class="panel-body">
           <a href="/exames">
-            <span class="glyphicon glyphicon-th-list"></span> Exames
+            <span class="glyphicon glyphicon-th-list"></span> Lista de Exames
           </a>
         </div>
       </div>

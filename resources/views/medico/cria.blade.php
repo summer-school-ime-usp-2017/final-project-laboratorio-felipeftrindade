@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Cadastro de médicos')
+@section('title', 'Cadastrar Médico')
 
-@section('page-header-content', 'Cadastro de Médicos')
+@section('page-header-content', 'Cadastro de Médico')
 
 @section('content')
 
@@ -14,7 +14,7 @@
         </div>
         <div class="panel-body">
           <a href="/medicos">
-            <span class="glyphicon glyphicon-th-list"></span> Médicos
+            <span class="glyphicon glyphicon-th-list"></span> Lista de Médicos
           </a>
         </div>
       </div>

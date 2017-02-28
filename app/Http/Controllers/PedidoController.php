@@ -37,6 +37,7 @@ class PedidoController extends Controller
       $pedido->fill(request()->all());
       $pedido->save();
       $pedido->exames()->attach(request()->input('exames'));
+      request()->session()->flash('alert-success', 'Pedido cadastrado com sucesso!');
       return redirect('/pedidos');
     }
 }

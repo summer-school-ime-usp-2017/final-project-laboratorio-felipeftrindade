@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Cadastro de pedidos')
+@section('title', 'Cadastrar Pedido')
 
-@section('page-header-content', 'Cadastro de Pedidos')
+@section('page-header-content', 'Cadastrar Pedido')
 
 @section('content')
 
@@ -14,7 +14,7 @@
         </div>
         <div class="panel-body">
           <a href="/pedidos">
-            <span class="glyphicon glyphicon-th-list"></span> Pedidos
+            <span class="glyphicon glyphicon-th-list"></span> Lista de Pedidos
           </a>
         </div>
       </div>
@@ -47,12 +47,13 @@
             @endforeach
           </select>
         </div>
-        @foreach ($exames as $exame)
-          <div class="form-group">
-            <label for="exame_{{$exame->id}}">{{$exame->nome}}</label>
-            <input name="exames[]" id="exame_{{$exame->id}}" value="{{$exame->id}}" type="checkbox" class="form-control">
-          </div>
-        @endforeach
+        <div class="form-group">
+          <h4>Exames</h4>
+          @foreach ($exames as $exame)
+            <label class="checkbox-inline"><input name="exames[]" id="exame_{{$exame->id}}" type="checkbox" value="{{$exame->id}}">{{$exame->nome}}</label>
+          @endforeach
+        </div>
+        <br/>
         <button class="btn btn-primary">Salvar</button>
       </form>
     </div>

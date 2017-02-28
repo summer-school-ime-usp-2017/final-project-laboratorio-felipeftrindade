@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Cadastro de pacientes')
+@section('title', 'Cadastrar Paciente')
 
-@section('page-header-content', 'Cadastro de Pacientes')
+@section('page-header-content', 'Cadastrar Paciente')
 
 @section('content')
 
@@ -14,7 +14,7 @@
         </div>
         <div class="panel-body">
           <a href="/pacientes">
-            <span class="glyphicon glyphicon-th-list"></span> Pacientes
+            <span class="glyphicon glyphicon-th-list"></span> Lista de Pacientes
           </a>
         </div>
       </div>
@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
           <label for="cpf">CPF</label>
-          <input name="cpf" id="cpf" type="text" value="{{old('cpf')}}" class="form-control">
+          <input name="cpf" id="cpf" type="number" value="{{old('cpf')}}" class="form-control">
         </div>
         <div class="form-group">
           <label for="email">Email</label>

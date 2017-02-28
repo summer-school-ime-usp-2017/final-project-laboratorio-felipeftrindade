@@ -41,4 +41,3 @@ Route::get('/pedidos', 'PedidoController@index');
 Route::get('/pedidos/cria', 'PedidoController@cria');
 Route::get('/pedidos/show/{pedido}', 'PedidoController@show');
 Route::post('/pedidos', 'PedidoController@armazena');
-Route::patch('/pedidos/{pedido}', 'PedidoController@atualiza');

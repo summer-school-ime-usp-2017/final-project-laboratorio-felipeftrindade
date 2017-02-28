@@ -27,6 +27,7 @@ class ExameController extends Controller
         'metodo' => 'required|min:2|max:195',
       ]);
       Exame::create(request()->all());
+      request()->session()->flash('alert-success', 'Exame cadastrado com sucesso!');
       return redirect('/exames');
     }
 
@@ -37,6 +38,7 @@ class ExameController extends Controller
       ]);
       $exame->fill(request()->all());
       $exame->save();
+      request()->session()->flash('alert-success', 'Dados atualizado com sucesso!');
       return redirect('/exames');
     }
 }

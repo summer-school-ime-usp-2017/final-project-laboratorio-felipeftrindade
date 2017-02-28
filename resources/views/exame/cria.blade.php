@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
-@section('title', 'Cadastro de exames')
+@section('title', 'Cadastrar Exame')
 
-@section('page-header-content', 'Cadastro de Exames')
+@section('page-header-content', 'Cadastro de Exame')
 
 @section('content')
 
@@ -14,7 +14,7 @@
         </div>
         <div class="panel-body">
           <a href="/exames">
-            <span class="glyphicon glyphicon-th-list"></span> Exames
+            <span class="glyphicon glyphicon-th-list"></span> Lista de Exames
           </a>
         </div>
       </div>

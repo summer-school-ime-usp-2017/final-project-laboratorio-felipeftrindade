@@ -28,6 +28,7 @@ class MedicoController extends Controller
         'email' => 'required|email'
       ]);
       Medico::create(request()->all());
+      request()->session()->flash('alert-success', 'Médico cadastrado com sucesso!');
       return redirect('/medicos');
     }
 
@@ -39,6 +40,7 @@ class MedicoController extends Controller
       ]);
       $medico->fill(request()->all());
       $medico->save();
+      request()->session()->flash('alert-success', 'Dados atualizados com sucesso!');
       return redirect('/medicos');
     }
 }

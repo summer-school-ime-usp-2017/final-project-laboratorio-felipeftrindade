@@ -2,7 +2,9 @@
 
 @section('title', 'Detalhes do pedido')
 
-@section('page-header-content', "Detalhes do pedido:")
+@section('page-header-content')
+  Pedido: #{{$pedido->id}}
+@endsection
 
 @section('content')
 
@@ -14,31 +16,37 @@
         </div>
         <div class="panel-body">
           <a href="/pedidos">
-            <span class="glyphicon glyphicon-th-list"></span> Pedidos
+            <span class="glyphicon glyphicon-th-list"></span> Lista de Pedidos
           </a>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-        <div class="col-md-12">Médico: {{$pedido->medico->nome}}</div>
-        <div class="col-md-12">Paciente: {{$pedido->paciente->nome}}</div>
-        <div class="col-md-12">Exames solicitados:</div>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Metodo</th>
-            </tr>
-          </thead>
-          <tbody>
-             @foreach($pedido->exames as $exame)
-            <tr>
-              <td>{{ $exame->nome }}</td>
-              <td>{{ $exame->metodo }}</td>
-            </tr>
-            @endforeach
-          </tbody>
-        </table>
+        <div class="form-group">
+          <label>Médico:</label> {{$pedido->medico->nome}}
+        </div>
+        <div class="form-group">
+          <label>Paciente:</label> {{$pedido->paciente->nome}}
+        </div>
+        <div class="form-group">
+          <label>Exames solicitados</label><br/>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Método</th>
+              </tr>
+            </thead>
+            <tbody>
+               @foreach($pedido->exames as $exame)
+              <tr>
+                <td>{{ $exame->nome }}</td>
+                <td>{{ $exame->metodo }}</td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
     </div>
   </div>
 @endsection

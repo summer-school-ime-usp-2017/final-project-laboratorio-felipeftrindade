@@ -2,7 +2,7 @@
 
 @section('title', 'Pacientes')
 
-@section('page-header-content', 'Pacientes')
+@section('page-header-content', 'Pacientes Cadastrados')
 
 @section('content')
 
@@ -14,12 +14,17 @@
         </div>
         <div class="panel-body">
           <a href="/pacientes/cria">
-            <span class="glyphicon glyphicon-plus"></span> Pacientes
+            <span class="glyphicon glyphicon-plus"></span> Cadastrar Paciente
           </a>
         </div>
       </div>
     </div>
     <div class="col-md-6">
+      @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+         @if(Session::has('alert-' . $msg))
+           <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+         @endif
+      @endforeach
       <table class="table table-striped">
         <thead>
           <tr>
@@ -35,7 +40,7 @@
           <tr>
             <td>{{ $paciente->id }}</td>
             <td>{{ $paciente->nome }}</td>
-            <td>{{ $paciente->cpf }}</td>
+            <td class="cpf">{{ $paciente->cpf }}</td>
             <td>{{ $paciente->email }}</td>
             <td><a href="/pacientes/edita/{{$paciente->id}}">Editar</a></td>
           </tr>
